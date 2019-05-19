@@ -4,7 +4,7 @@ Simple Web Server using Python 3.7 Language
 This is Simple Webserver using Python 3.x with some implementation<br>
 How to use:
 1. install python version 3 or above<br>
-2. run the "python main.py" or "python3 main.py"<br>
+2. run the terminal "python main.py" or "python3 main.py"<br>
 
 ######################### follow the instructions to add your HTML file #########################
 
