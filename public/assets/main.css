@@ -1,0 +1,330 @@
+body, html {
+  height: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #FF9F9F;
+}
+
+@media (min-width: 680px) {
+  body {
+    background-color: #6F6F6F;
+  }
+}
+
+body header {
+  background: #8E5858;
+  background: -webkit-linear-gradient(left, #E78F8F 0%, #EC9393 50%, #FF9F9F 100%);
+  top: 0;
+  padding: 2vh 0 2vh 0;
+}
+
+@media (min-width: 680px) {
+  body header {
+    top: 0;
+    padding: 3.5vh 0 4vh 0;
+    background: #1B1B1B;
+    background: -webkit-linear-gradient(left, #1B1B1B 0%, #3F3F3F 50%, #6F6F6F 100%);
+  }
+}
+
+body header a {
+  text-decoration: none;
+  font-size: 1.4em;
+  font-family: 'Abril Fatface', cursive;
+  color: #ffffff;
+}
+
+body header a span {
+  color: #ff0000;
+}
+
+@media (min-width: 680px) {
+  body header a {
+    font-size: 2.2em;
+    color: #6F6F6F;
+  }
+  body header a span {
+    color: #ffffff;
+  }
+}
+
+body header a:hover {
+  color: #000000;
+}
+
+@media (min-width: 680px) {
+  body header a:hover {
+    color: #ffffff;
+  }
+}
+
+body main #kotak {
+  font-size: 13px;
+}
+
+body main #kotak .card {
+  background: #ffffff;
+  padding: 10px;
+  margin: 1em 1em;
+  border-radius: 15px;
+}
+
+@media (min-width: 680px) {
+  body main #kotak {
+    font-size: 24px;
+    color: #ffffff;
+  }
+  body main #kotak .card {
+    background: #1B1B1B;
+    padding: 15px;
+  }
+}
+
+body main .basabasi {
+  width: 100%;
+  margin: 9vh 0 0 0;
+  background: #FFFFFF;
+  background: -webkit-linear-gradient(left, #FFFFFF 0%, #FFCDCD 50%, #FF9999 100%);
+}
+
+@media (min-width: 680px) {
+  body main .basabasi {
+    max-height: 15vh;
+    padding: 5vh 0 5vh 0;
+    font-size: 24px;
+    background: #1B1B1B;
+    background: -webkit-linear-gradient(left, #1B1B1B 0%, #3F3F3F 50%, #6F6F6F 100%);
+    color: #ffffff;
+  }
+}
+
+body main #aboutme {
+  top: 0;
+  min-height: 60vh;
+  padding-top: 6vh;
+}
+
+body main #aboutme p {
+  padding-top: 4px;
+  color: #000000;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme p {
+    color: #ffffff;
+  }
+}
+
+body main #aboutme .profil-image {
+  width: 100px;
+  border: 5px solid #ffffff;
+  border-radius: 40%;
+  margin-bottom: 3px;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .profil-image {
+    border: 5px solid #ffffff;
+    width: 150px;
+  }
+}
+
+body main #aboutme .lol {
+  background: #ffffff;
+  padding: 10px 4px 10px 4px;
+  margin: 15vh 50px 50px 50px;
+  border-radius: 15px;
+}
+
+body main #aboutme .lol span {
+  font-size: 0,8em;
+  font-style: italic;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .lol {
+    color: white;
+    background: #1B1B1B;
+  }
+}
+
+body main #aboutme .skillz span {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .skillz span {
+    font-size: 25px;
+  }
+}
+
+body main #aboutme .skillz .chart {
+  display: table;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(2%, rgba(64, 255, 200, 0.1)), color-stop(2%, transparent));
+  background: linear-gradient(bottom, rgba(64, 255, 200, 0.1) 2%, transparent 2%);
+  background-size: 100% 50px;
+  background-position: left top;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .skillz .chart {
+    height: 350px;
+    width: 80%;
+  }
+}
+
+body main #aboutme .skillz .chart li {
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 300px;
+}
+
+body main #aboutme .skillz .chart li span {
+  margin: 0 2em;
+  display: block;
+  background: #d1ecfa;
+  -webkit-animation: draw 1s ease-in-out;
+          animation: draw 1s ease-in-out;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .skillz .chart li span {
+    margin: 0 4em;
+  }
+}
+
+body main #aboutme .skillz .chart li span:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 5px 0 0 0;
+  display: block;
+  content: attr(title);
+  word-wrap: break-word;
+}
+
+@media (min-width: 680px) {
+  body main #aboutme .skillz .chart li {
+    height: 300px;
+  }
+  body main #aboutme .skillz .chart li span {
+    font-size: 15px;
+    background: #ffffff;
+  }
+}
+
+body main #learn {
+  padding: 10px;
+}
+
+body main #learn h2 {
+  font-family: "Merriweather";
+  font-size: 1.6em;
+}
+
+@media (min-width: 680px) {
+  body main #learn h2 {
+    font-size: 2.6em;
+    color: #ffffff;
+  }
+}
+
+body main #learn .container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 10px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+body main #learn .container a {
+  text-decoration: none;
+  color: #000000;
+}
+
+@media (min-width: 680px) {
+  body main #learn .container a {
+    color: #ffffff;
+  }
+  body main #learn .container a a:hover {
+    color: #ffffff;
+  }
+}
+
+body main #learn .container a div {
+  margin: 10px 0 10px 0;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+}
+
+@media (min-width: 680px) {
+  body main #learn .container a div {
+    background: #ffffff;
+  }
+}
+
+body footer {
+  background: #8E5858;
+  background: -webkit-linear-gradient(left, #E78F8F 0%, #EC9393 50%, #FF9F9F 100%);
+}
+
+@media (min-width: 680px) {
+  body footer {
+    padding-top: 10px;
+    max-height: 15vh;
+    background: #1B1B1B;
+    background: -webkit-linear-gradient(left, #1B1B1B 0%, #6F6F6F 50%, #1B1B1B 100%);
+  }
+}
+
+body footer span {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+body footer .logo {
+  padding: 10px 10px 10px 10px;
+}
+
+body footer .logo img {
+  padding: 4px 10px 0 10px;
+  width: 25px;
+  height: 25px;
+}
+
+@media (min-width: 680px) {
+  body footer .logo img {
+    width: 45px;
+    height: 45px;
+    padding: 4px 30px 0 30px;
+  }
+}
+
+body footer .logo a {
+  text-decoration: none;
+}
+
+body footer .logo img:hover, body footer .logo a:hover {
+  color: #ffffff;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,266 @@
+$colors-white: (
+    primary: #FF9F9F,
+    white: #ffffff,
+    secondary: #E78F8F
+);
+
+$desktop: 680px;
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+body, html {
+    height: 100%;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    margin: 0;
+    background-color: map-get($colors-white, primary);
+    @include desktop {
+        background-color: #6F6F6F;
+    }
+    header {
+        background: #8E5858;
+        background: -webkit-linear-gradient(left, #E78F8F 0%, #EC9393 50%, #FF9F9F 100%);
+        top: 0;
+        padding: 2vh 0 2vh 0;
+
+        @include desktop {
+            top: 0;
+            padding: 3.5vh 0 4vh 0;
+            background: #1B1B1B;
+            background: -webkit-linear-gradient(left, #1B1B1B 0%, #3F3F3F 50%, #6F6F6F 100%);
+            
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.4em;
+            font-family: 'Abril Fatface', cursive;
+            color:#ffffff;
+            span {
+                color:#ff0000;
+            }
+            @include desktop {
+                font-size: 2.2em;
+                color: #6F6F6F;
+                span {
+                color: map-get($colors-white,white);
+                }
+            }
+        }
+        a:hover {
+            color:#000000;
+            @include desktop {
+                color: map-get($colors-white, white);
+            }
+        }
+    }
+    main {
+        #kotak {
+            font-size: 13px;
+            .card {
+                background: #ffffff;
+                padding: 10px;
+                margin: 1em 1em;
+                border-radius: 15px;
+            }
+            @include desktop {
+                font-size: 24px;
+                color: map-get($colors-white,white);
+                .card {
+                    background: #1B1B1B;
+                    padding: 15px;
+                }
+            }
+        }
+        .basabasi {
+            width: 100%;
+            margin: 9vh 0 0 0;
+            background: #FFFFFF;
+            background: -webkit-linear-gradient(left, #FFFFFF 0%, #FFCDCD 50%, #FF9999 100%);
+            @include desktop {
+                max-height: 15vh;
+                padding: 5vh 0 5vh 0;
+                font-size: 24px;
+                background: #1B1B1B;
+                background: -webkit-linear-gradient(left, #1B1B1B 0%, #3F3F3F 50%, #6F6F6F 100%);
+                color: map-get($colors-white,white);
+            }
+        }
+        #aboutme {
+            top: 0;
+            min-height: 60vh;
+            padding-top: 6vh;
+            @include desktop{
+                color: map-get($colors-white,while);
+            }
+            p {
+                padding-top: 4px;
+                color: #000000;
+                @include desktop{
+                    color: map-get($colors-white,white);
+                }
+            }
+            .profil-image {
+                width: 100px;
+                border: 5px solid #ffffff;
+                border-radius: 40%;
+                margin-bottom: 3px;
+
+                @include desktop {
+                    border: 5px solid map-get($colors-white,white);
+                    width: 150px;
+                }
+            }
+            .lol { 
+                
+                background: #ffffff;
+                padding: 10px 4px 10px 4px;
+                margin: 15vh 50px 50px 50px;
+                border-radius: 15px;
+                span {
+                   font-size: 0,8em;
+                    font-style: italic;
+                }
+                @include desktop {
+                    color: white;
+                    background: #1B1B1B;
+                }
+            }
+            .skillz {
+                span {
+                    font-size: 19px;
+                    font-weight: bold;
+                    @include desktop{
+                        font-size: 25px;
+                    }
+                }
+                .chart{
+                    display: table;
+                    // table-layout: fixed;   
+                    width: 100%;
+                    height: 300px;
+                    margin: 0 auto;
+                    
+                    background: linear-gradient(bottom, rgba(64, 255, 200, 0.1) 2%, transparent 2%);
+                    background-size: 100% 50px;
+                    background-position: left top;
+                    @include desktop {
+                        height: 350px;
+                        width: 80%;
+                    }
+                        li{
+                        position: relative;
+                        display: table-cell;
+                        vertical-align: bottom;
+                        height: 300px;
+                        
+                        span{
+                            margin: 0 2em;
+                            display: block;
+                            background: #d1ecfa;
+                            animation: draw 1s ease-in-out;
+                            text-align: center;
+                            font-size: 11px;
+                            @include desktop{
+                                margin: 0 4em;
+                            }
+                                &:before{
+                                    position: absolute;;
+                                    left :0; right: 0; top: 100%;
+                                    padding: 5px 0 0 0;
+                                    display: block;
+                                    
+                                    content: attr(title);
+                                    word-wrap: break-word;
+                                }
+                            }
+                        @include desktop {
+                            height: 300px;
+                            span {
+                                font-size: 15px;
+                                background: map-get($colors-white,white);
+                            }
+                        }
+                        }  
+                    }
+                }
+            }
+            
+       #learn {
+           padding: 10px;
+           h2 {
+               font-family: "Merriweather";
+               font-size: 1.6em;
+               @include desktop{
+                   font-size: 2.6em;
+                   color: map-get($colors-white, white);
+               }
+           }
+           .container {
+                justify-content: center;
+                display: grid;
+                grid-template-columns: auto;
+                grid-gap: 10px;
+                background-color: transparent;
+                padding: 10px;
+                a{
+                    text-decoration: none;
+                    color: #000000;
+                    @include desktop {
+                        color: map-get($colors-white,white);
+                        a:hover {
+                            color: map-get($colors-white,white);
+                        }
+                    }
+                    div {
+                        margin: 10px 0 10px 0;
+                        background-color: #ffffff;
+                        text-align: center;
+                        font-size: 30px;
+                        padding: 15px 15px 15px 15px;
+                        border-radius: 15px;
+                        @include desktop{
+                            background: map-get($colors-white,white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background: #8E5858;
+        background: -webkit-linear-gradient(left, #E78F8F 0%, #EC9393 50%, #FF9F9F 100%);
+        @include desktop{
+            padding-top: 10px;
+            max-height: 15vh;
+            background: #1B1B1B;
+            background: -webkit-linear-gradient(left, #1B1B1B 0%, #6F6F6F 50%, #1B1B1B 100%);
+        }
+        span {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .logo {
+            padding: 10px 10px 10px 10px;
+            img {
+                padding: 4px 10px 0 10px;
+                width: 25px;
+                height:25px;
+                @include desktop{
+                    width:45px;
+                    height: 45px;
+                    padding: 4px 30px 0 30px;
+                }
+            }
+            a {
+                text-decoration: none;
+            }
+            img:hover, a:hover {
+                color: map-get($colors-white,white);
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:100,200,300,400');
+
+$colors-white: (
+    primary: #FF9F9F,
+    white: #ffffff,
+    secondary: #E78F8F
+);
+
+
+$desktop: 680px;
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+body, html {
+    height: 100%;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #222;
+    background-image: url("img/space-background.png");
+}
+body {
+    #learn {
+        padding: 10px;
+        .card {
+            background-color: #FF9F9F;
+            padding: 10px;
+            margin: 1em 1em;
+            border-radius: 15px;
+            @include desktop{
+                background: #ffffff;
+            }
+
+            h2 {
+                font-family: 'IBM Plex Sans Condensed', sans-serif;
+                font-size: 1.6em;
+                color: map-get($colors-white, white );
+                @include desktop{
+                    font-size: 2.6em;
+                    color: map-get($colors-white, primary);
+                }
+            }
+            samp {
+                color: white;
+                @include desktop{
+                    color: #FF9F9F;
+                    font-size: 1.6em;
+                }
+            }
+        }
+        .container {
+             justify-content: center;
+             display: grid;
+             grid-template-columns: auto;
+             grid-gap: 10px;
+             background-color: transparent;
+             padding: 10px;
+             @include desktop {
+                 grid-template-columns: 3;
+             }
+             a{
+                 text-decoration: none;
+                 color: #000000;
+                 @include desktop {
+                     color: map-get($colors-white,white);
+                     a:hover {
+                         color: map-get($colors-white,white);
+                     }
+                 }
+                 div {
+                     margin: 10px 0 10px 0;
+                     background-color: #ffffff;
+                     text-align: center;
+                     font-size: 30px;
+                     padding: 15px 15px 15px 15px;
+                     border-radius: 15px;
+                     @include desktop{
+                         background: map-get($colors-white,white);
+                     }
+                 }
+             }
+         }
+     }
+}

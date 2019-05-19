@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:100,200,300,400");
+body, html {
+  height: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #222;
+  background-image: url("img/space-background.png");
+}
+
+body #learn {
+  padding: 10px;
+}
+
+body #learn .card {
+  background-color: #FF9F9F;
+  padding: 10px;
+  margin: 1em 1em;
+  border-radius: 15px;
+}
+
+@media (min-width: 680px) {
+  body #learn .card {
+    background: #ffffff;
+  }
+}
+
+body #learn .card h2 {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 1.6em;
+  color: #ffffff;
+}
+
+@media (min-width: 680px) {
+  body #learn .card h2 {
+    font-size: 2.6em;
+    color: #FF9F9F;
+  }
+}
+
+body #learn .card samp {
+  color: white;
+}
+
+@media (min-width: 680px) {
+  body #learn .card samp {
+    color: #FF9F9F;
+    font-size: 1.6em;
+  }
+}
+
+body #learn .container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 10px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+@media (min-width: 680px) {
+  body #learn .container {
+    -ms-grid-columns: 3;
+        grid-template-columns: 3;
+  }
+}
+
+body #learn .container a {
+  text-decoration: none;
+  color: #000000;
+}
+
+@media (min-width: 680px) {
+  body #learn .container a {
+    color: #ffffff;
+  }
+  body #learn .container a a:hover {
+    color: #ffffff;
+  }
+}
+
+body #learn .container a div {
+  margin: 10px 0 10px 0;
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+}
+
+@media (min-width: 680px) {
+  body #learn .container a div {
+    background: #ffffff;
+  }
+}
+/*# sourceMappingURL=main.css.map */
