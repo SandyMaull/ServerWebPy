@@ -1,11 +1,12 @@
-# ServerWebPy
+# WebServerPy
 Simple Web Server using Python 3.7 Language
 
 This is Simple Webserver using Python 3.x with some implementation<br>
 How to use:
-first thing first u need python with version 3 above, then run the "python main.py" or "python3 main.py"
+1. u need python with version 3 above<br>
+2. run the "python main.py" or "python3 main.py"<br>
 
-######################### if you want to change or add your HTML file #########################
+######################### follow the instructions to add your HTML file #########################
 
 1. add your .html file on templates folder
 2. add the route to your html file, in main.py on folder routes
