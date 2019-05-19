@@ -1,61 +1,72 @@
-import os
-
-from http.server import BaseHTTPRequestHandler
-
-from routes.main import routes
-
-from response.staticHandler import StaticHandler
-from response.templateHandler import TemplateHandler
-from response.badRequestHandler import BadRequestHandler
+try:
+    import os,sys,time
+    from http.server import BaseHTTPRequestHandler
+    from routes.main import routes
+    from response.staticHandler import StaticHandler
+    from response.templateHandler import TemplateHandler
+    from response.badRequestHandler import BadRequestHandler
 
 
-class Server(BaseHTTPRequestHandler):
-    def do_HEAD(self):
-        return
+    class Server(BaseHTTPRequestHandler):
+        def do_HEAD(self):
+            return
 
-    def do_GET(self):
-        split_path = os.path.splitext(self.path)
-        request_extension = split_path[1]
+        def do_GET(self):
+            split_path = os.path.splitext(self.path)
+            request_extension = split_path[1]
 
-        if request_extension is "" or request_extension is ".html":
-            hashingslash = self.path[-1:]
-            if hashingslash is not '/':
-                self.path += '/'
+            if request_extension is "" or request_extension is ".html":
+                hashingslash = self.path[-1:]
+                if hashingslash is not '/':
+                    self.path += '/'
 
-            # print (self.path)
-            if self.path in routes:
-                handler = TemplateHandler()
-                handler.find(routes[self.path])
-            else:
+                # print (self.path)
+                if self.path in routes:
+                    handler = TemplateHandler()
+                    handler.find(routes[self.path])
+                else:
+                    handler = BadRequestHandler()
+            elif request_extension is ".py":
                 handler = BadRequestHandler()
-        elif request_extension is ".py":
-            handler = BadRequestHandler()
-        else:
-            handler = StaticHandler()
-            handler.find(self.path)
- 
-        self.respond({
-            'handler': handler
-        })
+            else:
+                handler = StaticHandler()
+                handler.find(self.path)
 
-    def handle_http(self, handler):
-        status_code = handler.getStatus()
+            self.respond({
+                'handler': handler
+            })
 
-        self.send_response(status_code)
+        def handle_http(self, handler):
+            status_code = handler.getStatus()
 
-        if status_code is 200:
-            content = handler.getContents()
-            self.send_header('Content-type', handler.getContentType())
-        else:
-            errorHtml = '/notFound.html'
-            content = open("templates{}".format(errorHtml), 'r').read()
+            self.send_response(status_code)
 
-        self.end_headers()
-        if isinstance( content, (bytes, bytearray) ):
-            return content
+            if status_code is 200:
+                content = handler.getContents()
+                self.send_header('Content-type', handler.getContentType())
+            else:
+                errorHtml = '/notFound.html'
+                content = open("templates{}".format(errorHtml), 'r').read()
 
-        return bytes(content, 'UTF-8')
+            self.end_headers()
+            if isinstance( content, (bytes, bytearray) ):
+                return content
 
-    def respond(self, opts):
-        response = self.handle_http(opts['handler'])
-        self.wfile.write(response)
+            return bytes(content, 'UTF-8')
+
+        def respond(self, opts):
+            response = self.handle_http(opts['handler'])
+            self.wfile.write(response)
+
+except KeyboardInterrupt:
+    print("Service Stop! Goodbye :)")
+    time.sleep(1)
+    sys.exit(0)
+
+except ConnectionAbortedError or ConnectionError or ConnectionRefusedError or ConnectionResetError:
+    print("Something error with the connection, make sure you have open port on what port u pick.")
+    sys.exit(0)
+
+except:
+    print("Something Error with the code!")
+    sys.exit(0)
