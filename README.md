@@ -1,7 +1,7 @@
 # ServerWebPy
 Simple Web Server using Python 3.7 Language
 
-This is Simple Webserver using Python 3.x with some implementation
+This is Simple Webserver using Python 3.x with some implementation<br>
 How to use:
 first thing first u need python with version 3 above, then run the "python main.py" or "python3 main.py"
 
@@ -14,6 +14,6 @@ first thing first u need python with version 3 above, then run the "python main.
 
 ####################################################################################
 
-NOTE: This version is not stable yet, it only can run the html,css,and image without php and json file. 
-please contact me on https://www.facebook.com/kurikurayaku if you find error.
+NOTE: This version is not stable yet, it only can run the html,css,and image without php and json file.<br> 
+please contact me on https://www.facebook.com/kurikurayaku if you find error.<br>
 Kuronekosan - "Little Script Kiddie"
